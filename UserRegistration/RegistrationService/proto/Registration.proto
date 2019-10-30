@@ -1,0 +1,20 @@
+syntax ="proto3";
+
+package RegistrationService;
+
+service RegistrationService {
+    rpc Registration(RegistrationRequest) returns(RegistrationResponse);
+}
+message RegistrationRequest {
+    string id = 1;
+	string email = 2;
+	string name = 3;
+    string password = 4;
+    string mobile = 5;
+    string city = 6;
+}
+message RegistrationResponse{
+    string message = 1;
+	uint64 code = 2;
+	RegistrationRequest registrationRequest = 3;
+}
